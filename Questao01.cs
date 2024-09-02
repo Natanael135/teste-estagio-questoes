@@ -9,7 +9,7 @@ namespace desafio_codigo_estagio
 {
     public class Questao01
     {
-        // Construtor da classe
+        // Construtor da classe 
         public Questao01()
         {
             int indice = 13;
