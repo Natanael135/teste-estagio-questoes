@@ -24,24 +24,19 @@ namespace desafio_codigo_estagio
     {
         private string jsonFilePath;
 
-        // Construtor que recebe o caminho do arquivo JSON
         public Questao03(string caminhoJson)
         {
             jsonFilePath = caminhoJson;
         }
 
-        // Método para calcular e exibir os resultados
         public void CalcularFaturamento()
         {
             try
             {
-                // Ler o arquivo JSON
                 string jsonData = File.ReadAllText(jsonFilePath);
 
-                // Desserializar o JSON para uma lista de objetos FaturamentoDiario
                 List<FaturamentoDiario> faturamentos = JsonConvert.DeserializeObject<List<FaturamentoDiario>>(jsonData);
 
-                // Filtrar os dias com faturamento (não zero)
                 var diasComFaturamento = faturamentos.Where(f => f.Valor > 0).ToList();
 
                 if (diasComFaturamento.Count == 0)
@@ -50,17 +45,12 @@ namespace desafio_codigo_estagio
                     return;
                 }
 
-                // Calcular o menor e maior valor de faturamento
                 decimal menorFaturamento = diasComFaturamento.Min(f => f.Valor);
                 decimal maiorFaturamento = diasComFaturamento.Max(f => f.Valor);
 
-                // Calcular a média mensal de faturamento
                 decimal mediaFaturamento = diasComFaturamento.Average(f => f.Valor);
-
-                // Contar o número de dias com faturamento superior à média
                 int diasAcimaDaMedia = diasComFaturamento.Count(f => f.Valor > mediaFaturamento);
 
-                // Exibir os resultados
                 Console.WriteLine($"Menor valor de faturamento: {menorFaturamento:C}");
                 Console.WriteLine($"Maior valor de faturamento: {maiorFaturamento:C}");
                 Console.WriteLine($"Número de dias com faturamento acima da média: {diasAcimaDaMedia}");
