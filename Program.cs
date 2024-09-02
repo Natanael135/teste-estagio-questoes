@@ -1,7 +1,7 @@
 ﻿
 using desafio_codigo_estagio;
 
-Console.WriteLine("---------------Questao01----------------------");
+Console.WriteLine("---------------Questao01-----------------------");
 Questao01 questao01 = new Questao01();
 
 Console.WriteLine("\n---------------Questao02----------------------");
