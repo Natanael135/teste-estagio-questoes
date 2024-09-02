@@ -15,10 +15,8 @@ namespace desafio_codigo_estagio
 {
     public class Questao04
     {
-        // Método principal que calcula e exibe os percentuais
         public void CalcularPercentuais()
         {
-            // Dados de faturamento por estado
             var faturamentos = new Dictionary<string, decimal>
             {
                 { "SP", 67836.43m },
@@ -27,11 +25,9 @@ namespace desafio_codigo_estagio
                 { "ES", 27165.48m },
                 { "Outros", 19849.53m }
             };
-
-            // Calcular o valor total de faturamento
+            
             decimal totalFaturamento = faturamentos.Values.Sum();
 
-            // Exibir os percentuais de representação
             Console.WriteLine("Percentual de representação por estado:");
             foreach (var estado in faturamentos)
             {
